@@ -5,12 +5,17 @@
   grid-column-gap: $gutter-horizontal;
   min-height: 5rem;
   grid-template-columns: repeat(12, 1fr);
-  &:not(:last-child) {
-    margin-bottom: $gutter-vertical;
+
+  @include respond(tabPort) {
+    max-width: $grid-width-medium;
+    margin-bottom: 1rem;
+    grid-column-gap: 0;
+    justify-content: center;
+    padding: 3rem;
   }
 
-  [class^="col-"] {
-    // padding: 1rem 3rem;
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
   }
 
   .col {
@@ -32,6 +37,13 @@
     }
     &-3-4 {
       grid-column: span 9;
+    }
+  }
+
+  [class^="col-"] {
+    @include respond(tabPort) {
+      grid-column: 1/-1;
+      margin-bottom: 4rem;
     }
   }
 }

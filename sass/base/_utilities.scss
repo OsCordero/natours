@@ -4,6 +4,10 @@
 
 .u-mb-8 {
   margin-bottom: 8rem;
+
+  @include respond(tabPort) {
+    margin-bottom: 4rem;
+  }
 }
 
 .u-mb-1 {
@@ -15,6 +19,10 @@
 }
 .u-mt-12 {
   margin-top: 11rem;
+
+  @include respond(tabPort) {
+    margin-top: 3rem;
+  }
 }
 
 .u-margin-center {

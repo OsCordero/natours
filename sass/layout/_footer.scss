@@ -2,6 +2,7 @@
   background-color: $color-grey-dark-3;
   padding: 5rem;
   font-size: 1.6rem;
+
   &__logo-box {
     text-align: center;
     margin-bottom: 8rem;
@@ -46,6 +47,6 @@
     color: $color-grey-light-1;
     padding-top: 2rem;
     display: inline-block;
-    grid-column: 8/-1;
+    grid-column: 1/-1;
   }
 }

@@ -9,8 +9,20 @@
   font-size: 1.8rem;
   transform: skewX(-12deg);
 
+  @include respond(tabPort) {
+    width: 100%;
+  }
+  @include respond(phone) {
+    transform: skewX(0);
+    display: grid;
+    justify-items: center;
+  }
+
   & > * {
     transform: skewX(12deg);
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__shape {
@@ -23,6 +35,15 @@
     margin-right: 2rem;
     position: relative;
     overflow: hidden;
+
+    @include respond(tabPort) {
+      margin-right: 4rem;
+    }
+    @include respond(phone) {
+      margin-right: 0;
+      float: none;
+      margin-bottom: 3rem;
+    }
   }
 
   &__img {

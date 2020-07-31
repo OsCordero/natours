@@ -1,0 +1,31 @@
+/*
+    0 - 600px:          Phone
+    600px - 900px:      Tablet portrait
+    900px - 1200px:     tablet landscape
+    1200px - 1900px:    normal styles
+    1900+:              big desktop
+
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 600px) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tabPort {
+    @media only screen and (max-width: 900px) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tabLand {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == bigDesk {
+    @media only screen and (min-width: 2000px) {
+      @content;
+    } //1900
+  }
+}
