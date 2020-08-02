@@ -9,6 +9,7 @@
     transition: transform 0.6s ease;
     position: absolute;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
@@ -148,7 +149,7 @@
     font-weight: 300;
   }
 
-  @include respond(tabPort) {
+  @media only screen and (max-width: 900px), only screen and (hover: none) {
     min-height: auto;
     border-radius: 3px;
     background-color: $color-white;

@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  background-color: rgba($color-grey-dark-3, 0.9);
+  background-color: rgba($color-grey-dark-3, 0.5);
   z-index: 20;
   display: grid;
   align-content: center;
@@ -13,6 +13,19 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.6s;
+
+  @supports (backdrop-filter: blur(10px)) {
+    backdrop-filter: blur(10px);
+  }
+  @media only screen and (max-width: 1700px) {
+    grid-template-columns: 85%;
+  }
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: 90%;
+  }
+  @include respond(tabPort) {
+    grid-template-columns: 90%;
+  }
 
   &:target {
     opacity: 1;
@@ -34,6 +47,22 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     overflow: hidden;
+
+    @include respond(tabPort) {
+      grid-template-columns: auto;
+      overflow: scroll;
+    }
+    @include respond(phone) {
+      max-height: 90vh;
+    }
+  }
+
+  &__left {
+    @include respond(tabPort) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 250px;
+    }
   }
 
   &__text {
@@ -50,6 +79,14 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+
+    @include respond(tabPort) {
+      margin-bottom: 4rem;
+    }
+    @include respond(phone) {
+      -moz-column-count: 1;
+      column-count: 1;
+    }
   }
 
   &__right {
@@ -61,6 +98,10 @@
   &__img {
     display: block;
     width: 100%;
+    @include respond(tabPort) {
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__close {

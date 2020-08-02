@@ -26,15 +26,18 @@
   }
 
   &__shape {
-    width: 15rem;
-    height: 15rem;
     float: left;
-    shape-outside: circle(50%);
-    -webkit-clip-path: circle(50%);
-    clip-path: circle(50%);
+
     margin-right: 2rem;
     position: relative;
     overflow: hidden;
+    @supports (clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50%);
+      clip-path: circle(50%);
+      shape-outside: circle(50%);
+      width: 15rem;
+      height: 15rem;
+    }
 
     @include respond(tabPort) {
       margin-right: 4rem;

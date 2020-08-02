@@ -6,8 +6,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/icon-font.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" tUpe="image/png" href="img/favicon.png" />
 
     <title>Natours | Exciting tours for adventurous people</title>
@@ -71,9 +70,30 @@
           </div>
           <div class="col-1-2">
             <div class="compotition">
-              <img src="img/nat-1-large.jpg" alt="photo one" class="compotition__photo compotition__photo--1" />
+              <img
+                alt=""
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width:900px) 22vw, (max-width:600px) 33vw, 340px"
+                src="img/nat-1-large.jpg"
+                class="compotition__photo compotition__photo--1"
+              />
+              <img
+                alt=""
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width:900px) 22vw, (max-width:600px) 33vw, 340px"
+                src="img/nat-2-large.jpg"
+                class="compotition__photo compotition__photo--2"
+              />
+              <img
+                alt=""
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width:900px) 22vw, (max-width:600px) 33vw, 340px"
+                src="img/nat-3-large.jpg"
+                class="compotition__photo compotition__photo--3"
+              />
+              <!-- <img src="img/nat-1-large.jpg" alt="photo one" class="compotition__photo compotition__photo--1" />
               <img src="img/nat-2-large.jpg" alt="Photo two" class="compotition__photo compotition__photo--2" />
-              <img src="img/nat-3-large.jpg" alt="Photo three" class="compotition__photo compotition__photo--3" />
+              <img src="img/nat-3-large.jpg" alt="Photo three" class="compotition__photo compotition__photo--3" /> -->
             </div>
           </div>
         </div>
@@ -318,7 +338,10 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img class="footer__logo" src="img/logo-green-2x.png" alt="logo" />
+        <picture class="footer__logo">
+          <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width:600px)" />
+          <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="logo" src="img/logo-green-2x.png" />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-2">
